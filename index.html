@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-tiktok@0.1.0/lite-tiktok.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bunker Sport - Implementos Deportivos para MMA</title>
+    <title>VIVILAB Chiclayo - Laboratorio Clínico | Consulta de Resultados</title>
+    <meta name="description" content="Laboratorio clínico en Chiclayo. Consulta tus resultados de análisis en línea. Exámenes de hormonas, marcadores tumorales, pruebas especiales y toma de muestras a domicilio.">
     <style>
-        /* Estilos generales */
         * {
             margin: 0;
             padding: 0;
@@ -13,737 +14,747 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        :root {
-            --primary: #d32f2f;
-            --primary-dark: #b71c1c;
-            --secondary: #212121;
-            --accent: #ffab00;
-            --light: #f5f5f5;
-            --gray: #757575;
-        }
-        
         body {
-            background-color: var(--light);
-            color: var(--secondary);
+            background-color: #f0f8ff;
+            color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
         
-        .section {
-            padding: 80px 0;
+        /* Header y Logo */
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #e6f7ff 100%);
+            padding: 30px 0;
+            border-bottom: 3px solid #4fc3f7;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .logo-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo-main {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 10px;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .vivi {
+            color: #4fc3f7;
+        }
+        
+        .lab {
+            color: #1976d2;
+        }
+        
+        .slogan {
+            font-size: 1.5rem;
+            color: #1976d2;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            color: #444;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .chiclayo {
+            font-size: 1.4rem;
+            color: #1976d2;
+            font-weight: 600;
+            background-color: #e6f7ff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .separator {
+            height: 4px;
+            width: 150px;
+            background: linear-gradient(to right, #4fc3f7, #1976d2);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
+        /* Formulario de consulta */
+        .form-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid #1976d2;
+        }
+        
+        .form-title {
+            text-align: center;
+            color: #1976d2;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .form-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .results-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+            font-size: 1.1rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: #4fc3f7;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.2);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, #4fc3f7, #1976d2);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(25, 118, 210, 0.3);
+        }
+        
+        .form-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        /* Video de TikTok */
+        .video-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        .video-title {
+            color: #1976d2;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .tiktok-video {
+            max-width: 350px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background-color: #000;
+        }
+        
+        .tiktok-video iframe {
+            width: 100%;
+            height: 620px;
+            display: block;
+        }
+        
+        /* Servicios y exámenes */
+        .services-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
         
         .section-title {
+            color: #1976d2;
+            font-size: 2rem;
+            margin-bottom: 25px;
             text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-            color: var(--secondary);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .service-card {
+            background-color: #f8fdff;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #4fc3f7;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .service-card ul {
+            list-style-type: none;
+        }
+        
+        .service-card li {
+            padding: 5px 0;
             position: relative;
+            padding-left: 20px;
         }
         
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background-color: var(--primary);
-            margin: 15px auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 4px;
-            text-decoration: none;
+        .service-card li:before {
+            content: "✓";
+            color: #4fc3f7;
             font-weight: bold;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            position: absolute;
+            left: 0;
+        }
+        
+        .home-service {
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            padding: 25px;
             text-align: center;
+            border: 2px solid #4fc3f7;
+            margin-top: 20px;
         }
         
-        .btn-primary {
-            background-color: var(--primary);
+        .home-service h3 {
+            color: #1976d2;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Información de contacto */
+        .contact-section {
+            background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
             color: white;
-            border: 2px solid var(--primary);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
         }
         
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
         }
         
-        /* Header */
-        header {
-            background-color: var(--secondary);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        
-        .header-content {
+        .contact-item {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            margin-bottom: 20px;
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
+        .contact-icon {
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
-            font-weight: bold;
-            color: white;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
         
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
-        
-        .logo-text span {
-            color: var(--primary);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        nav ul li a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: width 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-        
-        nav ul li a:hover:after {
-            width: 100%;
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.tortaschiclayo.com/cdn-cgi/image/width=auto,format=auto,fit=cover,/mmashop.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 120px 0;
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .hero .btn {
-            font-size: 18px;
-            padding: 15px 40px;
-            margin-top: 20px;
-        }
-        
-        .whatsapp-btn {
-         
-           background-color: #25D366;
-            border-color: #25D366;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 300px;
-            margin: 0 auto;
-
-
-
- 
-
-
-
-
-
-
-
-
-
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            border-color: #128C7E;
-        }
-        
-        .whatsapp-icon {
-            margin-right: 10px;
-            font-size: 24px;
-        }
-        
-        /* Productos destacados */
-        .featured-products {
-            background-color: white;
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .product-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #eee;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .product-image {
-            height: 200px;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-image:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(211,47,47,0.1), rgba(33,33,33,0.1));
-        }
-        
-        .product-icon {
-            font-size: 60px;
-            color: var(--primary);
-            z-index: 1;
-        }
-        
-        .product-info {
-            padding: 20px;
-        }
-        
-        .product-info h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-            color: var(--secondary);
-        }
-        
-        .product-info p {
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-        
-        /* Información de envío */
-        .shipping-info {
-            background-color: #f9f9f9;
-        }
-        
-        .shipping-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .shipping-content p {
-            font-size: 18px;
-            margin-bottom: 40px;
-            color: var(--gray);
-        }
-        
-        .shipping-details {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .shipping-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            flex: 1;
-            min-width: 250px;
-            max-width: 350px;
-            border-top: 4px solid var(--primary);
-        }
-        
-        .shipping-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-        
-        .shipping-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        /* Sobre nosotros */
-        .about {
-            background-color: white;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h2 {
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            color: var(--gray);
-        }
-        
-        .about-image {
-            flex: 1;
-            height: 300px;
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about-image:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(211,47,47,0.1), rgba(33,33,33,0.1));
-        }
-        
-        .about-icon {
-            font-size: 100px;
-            color: var(--primary);
-            z-index: 1;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--secondary);
-            color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-        
-        .footer-section p, .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: white;
+        .contact-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
         }
         
         .social-links {
             display: flex;
+            justify-content: center;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 30px;
         }
         
         .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.1);
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.3s;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            color: #1976d2;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s;
         }
         
         .social-link:hover {
-            background-color: var(--primary);
+            transform: translateY(-5px);
+            background-color: #4fc3f7;
+            color: white;
+        }
+        
+        /* Horario */
+        .schedule {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .schedule h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .schedule p {
+            margin-bottom: 5px;
+        }
+        
+        .highlight {
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0d47a1;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
         }
         
         .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #999;
-            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .url {
+            color: #4fc3f7;
+            font-weight: 600;
+            margin: 10px 0;
+            font-size: 1.1rem;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
+            .logo-main {
+                font-size: 3.5rem;
             }
             
-            nav ul {
-                margin-top: 20px;
-                justify-content: center;
-                flex-wrap: wrap;
+            .form-section, .services-section, .video-section, .contact-section {
+                padding: 25px;
             }
             
-            nav ul li {
-                margin: 0 10px 10px;
+            .video-title, .section-title, .form-title {
+                font-size: 1.7rem;
             }
             
-            .mobile-menu {
-                display: block;
-                position: absolute;
-                top: 15px;
-                right: 20px;
+            .tiktok-video iframe {
+                height: 500px;
             }
             
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                width: 100%;
-            }
-            
-            .footer-content {
-                flex-direction: column;
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
         }
         
         @media (max-width: 480px) {
-            .hero {
-                padding: 80px 0;
+            .logo-main {
+                font-size: 2.8rem;
             }
             
-            .hero h1 {
-                font-size: 28px;
+            .subtitle {
+                font-size: 1.4rem;
             }
             
-            .section {
-                padding: 60px 0;
+            .slogan {
+                font-size: 1.2rem;
             }
             
-            .section-title {
-                font-size: 28px;
+            .form-section, .services-section, .video-section, .contact-section {
+                padding: 20px;
             }
+            
+            .tiktok-video iframe {
+                height: 450px;
+            }
+        }
+        
+        /* Mensaje de confirmación */
+        .confirmation {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .confirmation-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-top: 5px solid #4fc3f7;
+        }
+        
+        .confirmation h2 {
+            color: #1976d2;
+            margin-bottom: 20px;
+        }
+        
+        .close-btn {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">BS</div>
-                    <div class="logo-text">Bunker<span>Sport</span>.com</div>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#productos">Productos</a></li>
-                        <li><a href="#envios">Envíos</a></li>
-                        <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </nav>
-                <div class="mobile-menu">☰</div>
+            <div class="logo-section">
+                <h1 class="logo-main">
+                    <span class="vivi">VIVI</span><span class="lab">LAB</span>
+                </h1>
+                <p class="slogan">"seguridad y confianza en tus resultados"</p>
+                <p class="subtitle">Laboratorio de Análisis Clínicos y Microbiológicos</p>
+                <div class="chiclayo">Chiclayo — Perú</div>
             </div>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Equipamiento Profesional para MMA en Chiclayo</h1>
-                <p>En Bunker Sport encontrarás los mejores implementos deportivos para practicar Artes Marciales Mixtas. Calidad, durabilidad y máximo rendimiento.</p>
-                <a href="https://wa.me/c/51949972170" class="btn btn-primary whatsapp-btn">
-                    <span class="whatsapp-icon">📱</span> Ver Catálogo en WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Productos Destacados -->
-    <section class="section featured-products" id="productos">
-        <div class="container">
-            <h2 class="section-title">Productos Destacados</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-icon"><img src="https://www.tortaschiclayo.com/cdn-cgi/image/width=auto,format=auto,fit=cover,/guantes.png"></div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Guantes de Box</h3>
-                        <p>Entrena con ligereza y potencia. Guantes de 12 onzas para el mejor rendimiento. Máxima sensación, protección total.</p>
-                        <a href="https://wa.me/p/24844655508485811/51949972170" class="btn btn-primary">Consultar</a>
-                    </div>
+    
+    <main class="container">
+        <!-- Formulario de consulta de resultados -->
+        <section class="form-section">
+            <h2 class="form-title">Consulta tus resultados en línea</h2>
+            <p class="form-subtitle">Ingresa los datos solicitados para acceder a tus resultados de análisis clínicos</p>
+            
+            <div class="separator"></div>
+            
+            <form class="results-form" id="resultsForm">
+                <div class="form-group">
+                    <label for="order-number">Número de orden</label>
+                    <input type="text" id="order-number" name="order-number" placeholder="Ejemplo: VV-2024-00123" required>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-icon"><img src="https://www.tortaschiclayo.com/cdn-cgi/image/width=auto,format=auto,fit=cover,/vendas.png"></div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Vendas para Manos</h3>
-                        <p>Protección esencial para tus manos durante el entrenamiento. Material transpirable y duradero.</p>
-                        <a href="https://wa.me/p/24259449816998407/51949972170" class="btn btn-primary">Consultar</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-icon"><img src="https://www.tortaschiclayo.com/cdn-cgi/image/width=auto,format=auto,fit=cover,/bucal.png"></div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Protector Bucal</h3>
-                        <p>Protege tus dientes y mandíbula durante el combate. Modelos personalizables disponibles.</p>
-                        <a href="https://wa.me/p/24785832907668006/51949972170" class="btn btn-primary">Consultar</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-icon"><img src="https://www.tortaschiclayo.com/cdn-cgi/image/width=auto,format=auto,fit=cover,/canilleras.png"></div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Canilleras</h3>
-                        <p>Protección completa para canillas y empeines. Ideales para entrenamiento de patadas.</p>
-                        <a href="https://wa.me/p/29524165163898138/51949972170" class="btn btn-primary">Consultar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Información de Envíos -->
-    <section class="section shipping-info" id="envios">
-        <div class="container">
-            <div class="shipping-content">
-                <h2 class="section-title">Información de Envíos</h2>
-                <p>Realizamos entregas en Chiclayo y envíos a nivel nacional para que tengas acceso a los mejores implementos de MMA sin importar donde te encuentres.</p>
                 
-                <div class="shipping-details">
-                    <div class="shipping-card">
-                        <div class="shipping-icon">📍</div>
-                        <h3>Entregas en Chiclayo</h3>
-                        <p>Realizamos entregas directas en toda la ciudad de Chiclayo con tiempos de entrega rápidos y seguros.</p>
-                    </div>
-                    <div class="shipping-card">
-                        <div class="shipping-icon">🚚</div>
-                        <h3>Envíos a Nivel Nacional</h3>
-                        <p>Llevamos nuestros productos a todo el Perú a través de servicios de courier confiables y con seguimiento.</p>
-                    </div>
+                <div class="form-group">
+                    <label for="document-number">Número de documento de identidad</label>
+                    <input type="text" id="document-number" name="document-number" placeholder="DNI, Carné de extranjería, etc." required>
                 </div>
-            </div>
-        </div>
-    </section>
+                
+                <button type="submit" class="submit-btn">Consultar Resultados</button>
+                
+                <p class="form-note">* Los resultados estarán disponibles según la indicación de tiempo proporcionada al momento de la toma de muestra.</p>
+            </form>
+        </section>
+        
+        <!-- Video de TikTok -->
+        <section class="video-section">
+            <h2 class="video-title">Conoce más sobre VIVILAB</h2>
+            <div class="separator"></div>
+            
+            <div class="tiktok-video">
+                <!-- TikTok Embed - Código proporcionado -->
+     <lite-tiktok videoid="7363729151083171078" ></lite-tiktok>
 
-    <!-- Sobre Nosotros -->
-    <section class="section about" id="nosotros">
-        <div class="container">
-            <h2 class="section-title">Sobre Bunker Sport</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Comprometidos con el deporte</h2>
-                    <p>En Bunker Sport nos especializamos en proveer equipamiento de alta calidad para atletas de artes marciales mixtas. Nuestra misión es apoyar a la comunidad deportiva peruana con productos duraderos y funcionales.</p>
-                    <p>Con años de experiencia en el rubro, conocemos las necesidades específicas de los practicantes de MMA y trabajamos con las mejores marcas para garantizar la mejor relación calidad-precio.</p>
-                    <a href="https://wa.me/51949972170" class="btn btn-primary">Contáctanos</a>
+            </div>
+            
+            <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
+                * Si el video no se muestra correctamente, puedes visitar nuestro TikTok directamente: 
+                <a href="https://www.tiktok.com/@vivilab2009" target="_blank" style="color: #1976d2; font-weight: 600;">@vivilab2009</a>
+            </p>
+        </section>
+        
+        <!-- Servicios y exámenes -->
+        <section class="services-section">
+            <h2 class="section-title">Servicios y Exámenes</h2>
+            <div class="separator"></div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Exámenes de Hormonas</h3>
+                    <ul>
+                        <li>Hormonas tiroideas</li>
+                        <li>Hormonas sexuales</li>
+                        <li>Cortisol</li>
+                        <li>Insulina</li>
+                    </ul>
                 </div>
-                <div class="about-image">
-                    <div class="about-icon"><img src="https://www.tortaschiclayo.com/cdn-cgi/image/width=auto,format=auto,fit=cover,/logo.png"></div>
+                
+                <div class="service-card">
+                    <h3>Marcadores Tumorales</h3>
+                    <ul>
+                        <li>CA125</li>
+                        <li>CA19-9</li>
+                        <li>PSA total y libre</li>
+                        <li>CEA</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Pruebas de Rutina</h3>
+                    <ul>
+                        <li>Glucosa</li>
+                        <li>Orina completa</li>
+                        <li>Colesterol total</li>
+                        <li>Triglicéridos</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Perfiles Especializados</h3>
+                    <ul>
+                        <li>Perfil lipídico</li>
+                        <li>Perfil hepático</li>
+                        <li>Perfil preoperatorio</li>
+                        <li>Hemograma completo</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Otras Pruebas</h3>
+                    <ul>
+                        <li>Urea y creatina</li>
+                        <li>PCR</li>
+                        <li>Grupo sanguíneo y factor</li>
+                        <li>Tiempo de coagulación</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Pruebas Especiales</h3>
+                    <ul>
+                        <li>Pruebas de embarazo</li>
+                        <li>Pruebas de alergia</li>
+                        <li>Enfermedades infecciosas</li>
+                        <li>Pruebas COVID-19</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contacto">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <p>📞 +51 949 972 170</p>
-                    <p>📍 Chiclayo, Perú</p>
-                    <a href="https://wa.me/c/51949972170">💬 WhatsApp</a>
-                    <div class="social-links">
-                        <a href="#" class="social-link">f</a>
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">ig</a>
+            
+            <div class="home-service">
+                <h3>🏠 TOMA DE MUESTRAS A DOMICILIO</h3>
+                <p>Comodidad y seguridad en la comodidad de tu hogar. Solicita nuestro servicio de toma de muestras a domicilio.</p>
+                <p style="margin-top: 10px; font-weight: 600; color: #1976d2;">Disponible en Chiclayo y distritos aledaños</p>
+            </div>
+        </section>
+        
+        <!-- Información de contacto -->
+        <section class="contact-section">
+            <h2 class="section-title" style="color: white;">Contacto y Horarios</h2>
+            <div class="separator" style="background: white; margin: 20px auto;"></div>
+            
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h3>Teléfonos</h3>
+                            <p>923108568 / 968835223</p>
+                            <p>(074) 237114</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>vivilab2009@hotmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h3>Dirección</h3>
+                            <p>Clínica Chiclayo, 2do Piso Consultorio 202</p>
+                            <p>Calle La Florida Urb. Santa Victoria, Chiclayo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Productos</h3>
-                    <a href="#">Guantes de MMA</a>
-                    <a href="#">Protectores</a>
-                    <a href="#">Equipamiento</a>
-                    <a href="#">Accesorios</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Información</h3>
-                    <a href="#">Sobre Nosotros</a>
-                    <a href="#">Política de Envíos</a>
-                    <a href="#">Términos y Condiciones</a>
+                
+                <div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-text">
+                            <h3>Horario Normal</h3>
+                            <p>Lunes a domingo: 7:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule">
+                        <h3>🌙 Atención 24 Horas</h3>
+                        <p>Siempre hay personal atendiendo fuera del horario normal</p>
+                        <p class="highlight">Servicio disponible las 24 horas del día</p>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; <span id="current-year"></span> Bunker Sport - Todos los derechos reservados</p>
+            
+            <div class="social-links">
+                <a href="https://web.facebook.com/ViviLabChiclayo" target="_blank" class="social-link" title="Facebook">f</a>
+                <a href="https://www.tiktok.com/@vivilab2009" target="_blank" class="social-link" title="TikTok">t</a>
+                <a href="https://wa.me/51923108568" target="_blank" class="social-link" title="WhatsApp">w</a>
+                <a href="mailto:vivilab2009@hotmail.com" class="social-link" title="Email">✉</a>
             </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <span class="vivi">VIVI</span><span class="lab">LAB</span>
+            </div>
+            <p class="url">https://vivilabchiclayo.com</p>
+            <p>Laboratorio de Análisis Clínicos y Microbiológicos en Chiclayo — Perú</p>
+            <p class="copyright">© 2024 VIVILAB Chiclayo. Todos los derechos reservados.</p>
         </div>
     </footer>
-
+    
+    <!-- Mensaje de confirmación (simulado) -->
+    <div class="confirmation" id="confirmationMessage">
+        <div class="confirmation-content">
+            <h2>Consulta en proceso</h2>
+            <p>Estamos buscando tus resultados con el número de orden <span id="orderDisplay"></span> y documento <span id="documentDisplay"></span>.</p>
+            <p>Por favor, espera un momento mientras procesamos tu solicitud.</p>
+            <p><strong>Nota:</strong> Esta es una simulación. En el sistema real, se conectaría con la base de datos de resultados del laboratorio.</p>
+            <button class="close-btn" id="closeConfirmation">Cerrar</button>
+        </div>
+    </div>
+    
     <script>
-        // JavaScript para el menú móvil
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const nav = document.querySelector('nav ul');
+        // Simulación del formulario de consulta
+        document.getElementById('resultsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            mobileMenu.addEventListener('click', function() {
-                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-            });
+            const orderNumber = document.getElementById('order-number').value;
+            const documentNumber = document.getElementById('document-number').value;
             
-            // Ajustar el menú en redimensionamiento
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    nav.style.display = 'flex';
-                } else {
-                    nav.style.display = 'none';
-                }
-            });
+            // Mostrar los datos en el mensaje de confirmación
+            document.getElementById('orderDisplay').textContent = orderNumber;
+            document.getElementById('documentDisplay').textContent = documentNumber;
             
-            // Inicializar el menú en móviles
-            if (window.innerWidth <= 768) {
-                nav.style.display = 'none';
-            }
-            
-            // Smooth scroll para enlaces de navegación
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Cerrar menú móvil después de hacer clic
-                    if (window.innerWidth <= 768) {
-                        nav.style.display = 'none';
-                    }
-                });
-            });
+            // Mostrar el mensaje de confirmación
+            document.getElementById('confirmationMessage').style.display = 'flex';
         });
-
-         document.addEventListener('DOMContentLoaded', function() {
-            const añoActual = new Date().getFullYear();
-            // Año actual en el footer
-            document.getElementById('current-year').textContent = añoActual;
-})
+        
+        // Cerrar el mensaje de confirmación
+        document.getElementById('closeConfirmation').addEventListener('click', function() {
+            document.getElementById('confirmationMessage').style.display = 'none';
+            document.getElementById('resultsForm').reset();
+        });
+        
+        // Cerrar el mensaje si se hace clic fuera del contenido
+        document.getElementById('confirmationMessage').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                document.getElementById('resultsForm').reset();
+            }
+        });
+        
+        // Agregar funcionalidad básica para el embed de TikTok (simulación)
+        // En un entorno real, TikTok cargaría su propio script
+        // Esta función es solo para simular la interacción
+        document.addEventListener('DOMContentLoaded', function() {
+            const tiktokBlockquote = document.querySelector('.tiktok-embed');
+            if (tiktokBlockquote) {
+                // En un entorno real, TikTok cargaría su script y procesaría el embed
+                // Para esta simulación, solo mostramos un mensaje si el embed no carga
+                setTimeout(function() {
+                    const tiktokSection = tiktokBlockquote.closest('section');
+                    if (tiktokSection && tiktokSection.innerHTML.trim() === tiktokBlockquote.outerHTML) {
+                        // Si el contenido no ha sido reemplazado por el embed de TikTok
+                        const container = document.querySelector('.tiktok-video');
+                        container.innerHTML = `
+                            <div style="background: #000; color: white; padding: 30px; text-align: center; border-radius: 15px; height: 620px; display: flex; flex-direction: column; justify-content: center;">
+                                <div style="font-size: 3rem; margin-bottom: 20px;">🎬</div>
+                                <h3 style="color: #69C9D0; margin-bottom: 15px;">Video de TikTok</h3>
+                                <p>Para ver este video, visita nuestro perfil de TikTok:</p>
+                                <a href="https://www.tiktok.com/@vivilab2009/video/7363729151083171078" target="_blank" style="color: #25F4EE; font-weight: bold; font-size: 1.2rem; margin: 15px 0; display: block;">Ver video en TikTok</a>
+                                <p style="color: #999; font-size: 0.9rem;">O escanea este código QR:</p>
+                                <div style="background: white; padding: 10px; display: inline-block; border-radius: 10px; margin-top: 10px;">
+                                    <div style="width: 150px; height: 150px; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                                        TikTok
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }, 3000);
+            }
+        });
     </script>
 </body>
 </html>
