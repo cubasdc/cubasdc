@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Tortas Chiclayo | Creamos páginas web profesionales en Perú</title>
-    <meta name="description" content="Antes era tu pastelería en Chiclayo, ahora soy tu aliado digital. Creamos páginas web modernas, rápidas y orientadas a resultados para negocios, emprendedores y empresas que quieren crecer en Internet.">
+    <title>Tortas Chiclayo | Creamos páginas web profesionales</title>
+    <meta name="description" content="Antes era tu pastelería de confianza en Chiclayo, ahora soy tu aliado digital. Creamos páginas web modernas, rápidas y orientadas a resultados para negocios que quieren crecer en Internet.">
+    <meta name="keywords" content="creación de páginas web, diseño web Chiclayo, desarrollo web Perú, páginas web para negocios, SEO, sitios web profesionales">
     <meta name="author" content="Tortas Chiclayo Web Studio">
     <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="7 days">
     <link rel="canonical" href="https://tortaschiclayo.com/">
     <meta property="og:title" content="Tortas Chiclayo | Creamos páginas web profesionales">
     <meta property="og:description" content="Antes era tu pastelería de confianza en Chiclayo, ahora soy tu aliado digital. Creamos páginas web modernas, rápidas y orientadas a resultados.">
@@ -32,6 +35,7 @@
             scroll-behavior: smooth;
         }
 
+        /* animated gradient background orbs */
         .orb {
             position: fixed;
             border-radius: 50%;
@@ -62,12 +66,14 @@
             left: 30%;
         }
 
+        /* layout containers */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
+        /* Glassmorphism cards & modern UI */
         .glass-card {
             background: rgba(18, 22, 35, 0.55);
             backdrop-filter: blur(12px);
@@ -83,6 +89,7 @@
             transform: translateY(-4px);
         }
 
+        /* button & link styles */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -121,6 +128,7 @@
             border-color: #a78bfa;
         }
 
+        /* project cards bento style */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -135,17 +143,9 @@
             transition: all 0.25s;
             border: 1px solid rgba(255,255,240,0.05);
         }
-        .project-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 1rem;
-            margin-bottom: 1rem;
-            background: #1a1f2e;
-            display: block;
-        }
         .project-icon {
             font-size: 2.4rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1.25rem;
             display: inline-block;
             background: rgba(139,92,246,0.2);
             padding: 0.7rem;
@@ -174,6 +174,7 @@
             color: white;
         }
 
+        /* thank you section */
         .thanks-block {
             background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.02));
             border-radius: 2rem;
@@ -182,6 +183,7 @@
             border-left: 3px solid #8b5cf6;
         }
 
+        /* contact pill */
         .contact-info {
             display: flex;
             flex-wrap: wrap;
@@ -190,6 +192,7 @@
             margin: 2rem 0;
         }
 
+        /* responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 0 1.2rem;
@@ -221,6 +224,7 @@
             font-weight: 700;
         }
 
+        /* loader & basic animations */
         @keyframes fadeSlideUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -240,7 +244,7 @@
 
 <main>
     <!-- Hero Section -->
-    <section id="inicio" class="container" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="container" style="padding-top: 4rem; padding-bottom: 2rem;">
         <div class="glass-card" style="padding: 2.2rem 2rem; text-align: center;">
             <div class="animate-up">
                 <span style="font-size: 0.85rem; letter-spacing: 2px; background: rgba(139,92,246,0.2); padding: 0.3rem 1rem; border-radius: 30px;">🍰 → 💻 TRANSFORMACIÓN DIGITAL</span>
@@ -248,7 +252,7 @@
                     De <span class="highlight">Tortas Chiclayo</span><br> a tu aliado en la web
                 </h1>
                 <p style="max-width: 700px; margin: 1rem auto; color: #cbd5f0; font-size: 1.2rem;">
-                    Durante años endulzamos momentos especiales en Chiclayo, ahora construimos presencia digital para que tu negocio también crezca sin límites.
+                    Durante años endulzamos momentos especiales, ahora construimos presencia digital para que tu negocio también crezca sin límites.
                 </p>
                 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.8rem;">
                     <a href="#portafolio" class="btn-primary">✨ Ver sitios creados</a>
@@ -256,10 +260,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Agradecimiento a ex clientes + nuevo enfoque -->
-    <section id="agradecimiento" class="container">
+    <div class="container">
         <div class="thanks-block animate-up delay-100">
             <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
                 <span style="font-size: 2rem;">🙏🏼</span>
@@ -267,17 +271,17 @@
             </div>
             <p style="margin-top: 1rem; font-size: 1.05rem;">
                 Cada pastel, cada celebración nos impulsó a evolucionar. Hoy, nuestro amor por los detalles se transforma en código: 
-                <strong>creamos páginas web modernas, rápidas y enfocadas en resultados para emprendedores, profesionales y empresas</strong> 
-                en Chiclayo y todo Perú. La misma pasión de antes, ahora para hacer brillar tu marca en Internet.
+                <strong>creamos páginas web modernas, rápidas y enfocadas en resultados para emprendedores, profesionales y empresas</strong>. 
+                La misma pasión de antes, ahora para hacer brillar tu marca en Internet.
             </p>
             <div style="margin-top: 1rem;">
                 <span style="background: rgba(139,92,246,0.2); border-radius: 60px; padding: 0.3rem 1rem; font-size: 0.85rem;">🚀 Diseño + Estrategia + Velocidad</span>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Portafolio de sitios web creados -->
-    <section id="portafolio" class="container">
+    <!-- Sección: sitios web creados (portafolio) -->
+    <div class="container" id="portafolio">
         <div style="text-align: center; margin: 2rem 0 0.5rem;">
             <h2 style="font-size: 2.2rem; font-weight: 700;">Proyectos que hablan por sí mismos</h2>
             <p style="color: #a7b3df; margin-top: 0.4rem;">Sitios funcionales, atractivos y optimizados para cada necesidad</p>
@@ -286,8 +290,6 @@
         <div class="project-grid">
             <!-- proyecto 1: arquitectosamameperu.com -->
             <div class="project-card animate-up delay-100">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect width='400' height='250' fill='%231e2235'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='20' fill='%23999'%3EArquitectos Samamé%3C/text%3E%3C/svg%3E" 
-                     alt="Vista previa del sitio web de Arquitectos Samamé Perú, con diseño profesional para estudio de arquitectura">
                 <div class="project-icon">🏛️</div>
                 <div class="project-title">Arquitectos Samamé Perú</div>
                 <div class="project-desc">
@@ -295,15 +297,13 @@
                     Una web que traduce confianza y experiencia en el sector construcción.
                 </div>
                 <a href="https://arquitectosamameperu.com/" target="_blank" rel="noopener noreferrer" class="project-link">
-                    Visitar arquitectosamameperu.com →
+                    Visitar sitio → 
                 </a>
                 <div style="margin-top: 1rem; font-size: 0.75rem; color: #7a85b0;">✨ Servicios destacados: consultoría arquitectónica, portafolio de obras, contacto directo</div>
             </div>
 
             <!-- proyecto 2: vivilabchiclayo.com -->
             <div class="project-card animate-up delay-150">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect width='400' height='250' fill='%231e2235'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='20' fill='%23999'%3EVivilab Chiclayo%3C/text%3E%3C/svg%3E"
-                     alt="Captura de pantalla del sitio web de Vivilab Chiclayo, laboratorio clínico con resultados online">
                 <div class="project-icon">🔬</div>
                 <div class="project-title">Vivilab Chiclayo</div>
                 <div class="project-desc">
@@ -311,15 +311,13 @@
                     Un sitio claro y accesible que conecta pacientes con servicios de salud.
                 </div>
                 <a href="https://vivilabchiclayo.com/" target="_blank" rel="noopener noreferrer" class="project-link">
-                    Explorar vivilabchiclayo.com →
+                    Explorar web →
                 </a>
                 <div style="margin-top: 1rem; font-size: 0.75rem; color: #7a85b0;">✨ Recomendado: sistema de consulta de resultados + geolocalización intuitiva</div>
             </div>
 
             <!-- proyecto 3: gastroenterologabeliceorellana.com -->
             <div class="project-card animate-up delay-200">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect width='400' height='250' fill='%231e2235'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='20' fill='%23999'%3EDra. Belice Orellana%3C/text%3E%3C/svg%3E"
-                     alt="Previsualización del sitio web de la Dra. Belice Orellana, especialista en gastroenterología en Chiclayo">
                 <div class="project-icon">⚕️</div>
                 <div class="project-title">Dra. Belice Orellana</div>
                 <div class="project-desc">
@@ -327,7 +325,7 @@
                     Página web que transmite seguridad y especialización médica.
                 </div>
                 <a href="https://gastroenterologabeliceorellana.com/" target="_blank" rel="noopener noreferrer" class="project-link">
-                    Conocer más sobre gastroenterologabeliceorellana.com →
+                    Conocer más →
                 </a>
                 <div style="margin-top: 1rem; font-size: 0.75rem; color: #7a85b0;">✨ Destacado: agendamiento de citas, información de procedimientos y confianza profesional</div>
             </div>
@@ -348,17 +346,14 @@
                 Cada proyecto refleja una estrategia única: desde landing pages de conversión hasta sitios informativos con gran experiencia de usuario.
             </p>
         </div>
-    </section>
+    </div>
 
     <!-- Llamada a la acción + contacto -->
-    <section id="contacto" class="container">
+    <div class="container">
         <div class="glass-card" style="background: linear-gradient(125deg, rgba(15, 23, 42, 0.65), rgba(30, 27, 58, 0.6)); text-align: center; padding: 2.5rem 1.8rem;">
             <span style="font-size: 3rem;">🚀</span>
             <h3 style="font-size: 1.9rem; font-weight: 700; margin: 0.8rem 0;">¿Listo para llevar tu negocio al siguiente nivel?</h3>
-            <p style="max-width: 500px; margin: 0 auto 1.5rem;">
-                Tu sitio web no es un gasto, es la inversión más inteligente para atraer clientes las 24 horas en Chiclayo y todo Perú. 
-                Te ayudo a crear una página que refleje la esencia de tu marca.
-            </p>
+            <p style="max-width: 500px; margin: 0 auto 1.5rem;">Tu sitio web no es un gasto, es la inversión más inteligente para atraer clientes las 24 horas. Te ayudo a crear una página que refleje la esencia de tu marca.</p>
             
             <div class="contact-info">
                 <a href="tel:+51971363165" class="btn-primary" style="background: linear-gradient(105deg, #22c55e, #16a34a);">
@@ -370,11 +365,11 @@
             </div>
             <p style="margin-top: 1rem; font-size: 0.85rem;">Respuesta rápida · Asesoría personalizada · Garantía de calidad</p>
         </div>
-    </section>
+    </div>
 
     <footer>
         <div class="container">
-            <p>© 2026 Tortas Chiclayo Web Studio — Antes endulzamos tu vida en Chiclayo, ahora potenciamos tu marca en Internet.</p>
+            <p>© 2026 Tortas Chiclayo Web Studio — Antes endulzamos tu vida, ahora potenciamos tu marca en Internet.</p>
             <p style="margin-top: 0.6rem;">
                 <a href="https://tortaschiclayo.com/" style="text-decoration: underline; text-underline-offset: 4px;">https://tortaschiclayo.com</a> | 
                 Diseño y desarrollo con enfoque moderno y performance
