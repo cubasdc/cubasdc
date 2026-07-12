@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Camiseta de algodón",
+    "precio": 19.99,
+    "descripcion": "Camiseta 100% algodón, disponible en varios colores."
+  },
+  {
+    "id": 2,
+    "nombre": "Zapatillas deportivas",
+    "precio": 49.95,
+    "descripcion": "Zapatillas ligeras para correr, suela de goma."
+  },
+  {
+    "id": 3,
+    "nombre": "Mochila impermeable",
+    "precio": 34.50,
+    "descripcion": "Mochila de 20 litros, resistente al agua y con varios compartimentos."
+  }
+]
